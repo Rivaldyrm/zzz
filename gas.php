@@ -4,10 +4,10 @@ include "function.php";
 echo color("white"," ===========================\n");
 echo color("white","| Auto create Gojek X Redeem voucher |\n");
 echo color("white","| Creator  : RivaldyRM            	 |\n");
-echo color("red","	| Reworked : RivaldyRM           |\n");
-echo "| Version : RivaldyRM X Aliando Axelle             |\n";
-echo ".| Time    :".date('[d-m-Y] [H:i:s]')."             |\n";
-echo ". ===========================\n";
+echo color("red","  | Reworked : RivaldyRM           |\n");
+echo"| Version : RivaldyRM X Aliando Axelle             |\n";
+echo"| Time    :".date('[d-m-Y] [H:i:s]')."             |\n";
+echo" ==========================\n";
 // function change(){
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
