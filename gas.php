@@ -4,15 +4,15 @@ include "function.php";
 echo color("white"," ===========================\n");
 echo color("white","| Auto create Gojek X Redeem voucher |\n");
 echo color("white","| Creator  : RivaldyRM            	 |\n");
-echo color("red","	| Reworked : RivaldyRM   			 |\n");
-echo "| Version : Rivaldy X Aliando Axelle     |\n";
-echo "| Time    :".date('[d-m-Y] [H:i:s]')."   |\n";
-echo " ===========================\n";
+echo color("red","	| Reworked : RivaldyRM   			|\n");
+echo "              | Version : RivaldyRM X Aliando Axelle     |\n";
+echo ".             | Time    :".date('[d-m-Y] [H:i:s]')."   |\n";
+echo ".              ===========================\n";
 // function change(){
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
         ulang:
-        echo color("nevy","?] Nomor : ");
+        echo color("green","?] Nomor Sia Ajg : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
@@ -40,17 +40,17 @@ echo " ===========================\n";
         $otptoken = getStr('"otp_token":"','"',$register);
         echo color("green","+] Kode Verifikasi Sudah di Kirim")."\n";
         otp:
-        echo color("nevy","?] OTP : ");
+        echo color("red","?] Mana OTP Na Ajg : ");
         $otp = trim(fgets(STDIN));
         $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
         if(strpos($verif, '"access_token"')){
-        echo color("green","+] Berhasil mendaftar\n");
+        echo color("green","+] Jadi Siah Daftarna\n");
         $token = getStr('"access_token":"','"',$verif);
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("green","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
-        echo color("white","\n===========(PROSES REDEEM VOUCHER)===========");
+        echo color("white","\n===========(DAGOAN KEUR DI REDEEM AJG)===========");
         echo "\n".color("yellow","!] Claim GOFOODSANTUY19");
         echo "\n".color("white","!] Please wait");
         for($a=1;$a<=3;$a++){
@@ -170,15 +170,15 @@ echo " ===========================\n";
          }
         }
          }else{
-            echo color("red","-] OTP SALAH !");
+            echo color("red","-] OTP NA SALAH AJG!");
             echo"\n==================================\n\n";
-            echo color("white","!] Silahkan input kembali\n");
+            echo color("white","!] Asupkeun Sing baleg OTP Na\n");
             goto otp;
             }
          }else{
-         echo color("red","-] Nomor Sudah di REGIST");
+         echo color("red","-] Nomer Na Geus Di Regist Ku Batur");
          echo"\n==================================\n\n";
-         echo color("white","!] Silahkan registrasi kembali\n");
+         echo color("white","!] Neangan Nomer Anyar Jig!!!\n");
          goto ulang;
          }
 //  }
